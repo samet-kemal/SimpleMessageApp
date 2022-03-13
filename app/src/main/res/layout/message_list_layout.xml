@@ -19,8 +19,20 @@
             android:layout_width="match_parent"
             android:textColor="@color/white"
             android:text="YOUR MESSAGE"
+            android:textSize="15dp"
             android:layout_margin="1dp"
             android:layout_height="wrap_content">
+        </EditText>
+
+        <EditText
+            android:id="@+id/numberToCall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:hint="NUMBER TO CALL"
+            android:textColor="@color/white"
+            android:textSize="20sp">
+
         </EditText>
 
         <TextView
@@ -43,15 +55,33 @@
 
         </TextView>
 
-        <Button
-            android:id="@+id/sendMessageButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:backgroundTint="#387865"
-            android:layout_margin="1dp"
-            android:text="SEND">
-        </Button>
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/sendMessageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:backgroundTint="#387865"
+                android:layout_margin="1dp"
+                android:text="SEND">
+            </Button>
+            <Button
+                android:id="@+id/callButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:backgroundTint="#755689"
+                android:layout_margin="1dp"
+                android:text="CALL">
+            </Button>
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

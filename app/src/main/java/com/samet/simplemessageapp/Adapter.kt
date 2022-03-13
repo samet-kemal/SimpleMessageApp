@@ -45,18 +45,25 @@ return 0   }
             var buttonSend:Button = view.findViewById(R.id.sendMessageButton)
             var phoneText:TextView=view.findViewById(R.id.phoneText)
             var nameText:TextView=view.findViewById(R.id.nameText)
+            var numberToCall:EditText = view.findViewById(R.id.numberToCall)
+            var callButton:Button = view.findViewById(R.id.callButton)
 
             phoneText.text = userList[p0].phoneNumber
             var phonenumber:String=userList[p0].phoneNumber
             nameText.text = userList[p0].name
+            var numberToCalling= numberToCall.text.toString()
 
             buttonSend.setOnClickListener {
                 var  messageContent:String = messageContent.text.toString()
 
-                var intent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse("sms:"+phonenumber))
+                var intent = Intent(Intent.ACTION_VIEW, Uri.parse("sms:$phonenumber"))
                 intent.putExtra("sms_body",messageContent)
                 activity.startActivity(intent)
-
+            }
+            callButton.setOnClickListener {
+                val intentToCall = Intent(Intent.ACTION_DIAL)
+                intentToCall.data= Uri.parse("tel:$numberToCalling")
+                activity.startActivity(intentToCall)
 
             }
 
