@@ -1,8 +1,11 @@
 package com.samet.simplemessageapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Display
+import android.view.View
+import android.widget.Button
 import android.widget.ListView
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +20,13 @@ class MainActivity : AppCompatActivity() {
         Initialize()
     }
 
+    fun goToSendEmail(view: View){
+
+        val intent= Intent(this,SendEmailActivity::class.java)
+        startActivity(intent)
+
+
+    }
 
 
 
